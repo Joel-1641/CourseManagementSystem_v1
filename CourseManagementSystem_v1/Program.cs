@@ -37,16 +37,18 @@ namespace CourseManagementSystem_v1
                         string courseId = Console.ReadLine();
 
                         Console.Write("Enter Course Title: ");
-                        string title = Console.ReadLine();
+                        string newTitle1 = courseRepo.CapitalizeTitle(Console.ReadLine());
+                        //string title = Console.ReadLine();
 
                         Console.Write("Enter Course Duration: ");
                         string duration = Console.ReadLine();
 
                         Console.Write("Enter Course Price: ");
-                        decimal price = decimal.Parse(Console.ReadLine());
+                        //decimal price = decimal.Parse(Console.ReadLine());
+                        decimal newPrice = courseManager.ValidateCoursePrice();
 
                         //courseManager.CreateCourse(courseId, title, duration, price);
-                        courseRepo.AddCourse(title, duration, price);
+                        courseRepo.AddCourse(newTitle1, duration, newPrice);
                         Console.WriteLine("Course added successfully.");
                        
 
@@ -69,15 +71,17 @@ namespace CourseManagementSystem_v1
                         string courseid = Console.ReadLine();
 
                         Console.Write("Enter new Title:  ");
-                        string newTitle = Console.ReadLine();
+                        string newTitle = courseRepo.CapitalizeTitle(Console.ReadLine());
+                        //string newTitle = Console.ReadLine();
 
                         Console.Write("Enter new Duration:  ");
                         string newDuration = Console.ReadLine();
 
                         Console.Write("Enter new Price:  ");
-                        decimal newPrice = decimal.Parse(Console.ReadLine());
+                        //decimal newPrice = decimal.Parse(Console.ReadLine());
+                        decimal newPrice2 = courseManager.ValidateCoursePrice();
 
-                        courseManager.UpdateCourse(courseid, newTitle, newDuration, newPrice);
+                        courseManager.UpdateCourse(courseid, newTitle, newDuration, newPrice2);
                    
                         break;
 
