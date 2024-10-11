@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CourseManagementSystem_v1
 {
-    internal class Course
+    public class Course
     {
-        private int CourseId { get; set; }
-        private string Title { get; set; }
-        private string Duration { get; set; }
-        private decimal Price { get; set; }
+        public int CourseId { get; set; }
+        public string Title { get; set; }
+        public string Duration { get; set; }
+        public decimal Price { get; set; }
 
         public Course(int courseId, string title, string duration, decimal price)
         {
@@ -26,7 +26,7 @@ namespace CourseManagementSystem_v1
             return $"{CourseId}, Title: {Title}, Duration: {Duration}, Price: {Price}";
         }
 
+        
     }
-
 }
 

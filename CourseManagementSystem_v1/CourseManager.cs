@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,23 @@ namespace CourseManagementSystem_v1
             courses.Add(courseObj);
 
         }
+
+        public void ReadCourses()
+        {
+            Console.WriteLine("--- Courses List ---\n");
+            if (courses.Count > 0)
+            {
+                foreach (var course in courses)
+                {
+                    Console.WriteLine($"ID: {course.CourseId}, Title: {course.Price}, Duration: {course.Duration}, Price: {course.Price}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Course Not Available..");
+            }
+        }
+
 
     }
 }
