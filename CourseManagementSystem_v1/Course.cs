@@ -26,7 +26,6 @@ namespace CourseManagementSystem_v1
             return $"{CourseId}, Title: {Title}, Duration: {Duration}, Price: {Price}";
         }
 
-        
     }
 }
 
