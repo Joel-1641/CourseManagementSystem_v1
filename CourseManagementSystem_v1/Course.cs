@@ -13,6 +13,8 @@ namespace CourseManagementSystem_v1
         public string Duration { get; set; }
         public decimal Price { get; set; }
 
+        public static int TotalCourses = 0;
+
         public Course(string courseId, string title, string duration, decimal price)
         {
             CourseId = courseId;

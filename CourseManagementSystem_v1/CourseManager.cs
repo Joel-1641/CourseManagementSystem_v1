@@ -64,6 +64,23 @@ namespace CourseManagementSystem_v1
             }
         }
 
+        public decimal ValidateCoursePrice()
+        {
+            decimal price;
+            do
+            {
+                Console.Write("Enter Course Price: ");
+                price = decimal.Parse(Console.ReadLine());
+                if (price <= 0)
+                {
+                    Console.WriteLine("Price must be a positive value.");
+                }
+
+            } while (price <= 0);
+            return price;
+        }
+
+
 
     }
 }
