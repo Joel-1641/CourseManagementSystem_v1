@@ -31,7 +31,7 @@ namespace CourseManagementSystem_v1
             }
             else
             {
-                Console.WriteLine("Course Not Available..");
+                Console.WriteLine("Course Not Available...");
             }
         }
         public void UpdateCourse(int id, string title, string duration, decimal price)
@@ -42,11 +42,25 @@ namespace CourseManagementSystem_v1
                 course.Title = title;
                 course.Duration = duration;
                 course.Price = price;
-                Console.WriteLine("\nCourse Update Successfully..");
+                Console.WriteLine("\nCourse Update Successfully...");
             }
             else
             {
-                Console.WriteLine("Course Not Found ..");
+                Console.WriteLine("Course Not Found ...");
+            }
+        }
+
+        public void DeleteCourse(int id)
+        {
+            var course = courses.Find(c => c.CourseId == id);
+            if (course != null)
+            {
+                courses.Remove(course);
+                Console.WriteLine("\nCourse Delete Successfully...");
+            }
+            else
+            {
+                Console.WriteLine("Course Not Found ...");
             }
         }
 
