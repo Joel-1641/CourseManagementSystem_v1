@@ -11,6 +11,7 @@ namespace CourseManagementSystem_v1
     {
         static void Main(string[] args)
         {
+            var courseRepo = new CourseRepository();
             var courseManager = new CourseManager();
             bool exit = false;
             while (!exit)
@@ -44,7 +45,8 @@ namespace CourseManagementSystem_v1
                         Console.Write("Enter Course Price: ");
                         decimal price = decimal.Parse(Console.ReadLine());
 
-                        courseManager.CreateCourse(courseId, title, duration, price);
+                        //courseManager.CreateCourse(courseId, title, duration, price);
+                        courseRepo.AddCourse(title, duration, price);
                         Console.WriteLine("Course added successfully.");
                        
 
@@ -54,7 +56,8 @@ namespace CourseManagementSystem_v1
 
                         Console.Clear();
 
-                        courseManager.ReadCourses();
+                        courseRepo.ListCourses();
+                        //courseManager.ReadCourses();
 
                         break;
 
