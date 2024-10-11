@@ -11,10 +11,10 @@ namespace CourseManagementSystem_v1
     {
         public List<Course> courses = new List<Course>();
 
-        public void CreateCourse(string title, string duration, decimal price)
+        public void CreateCourse(string courseId, string title, string duration, decimal price)
         {
 
-            var courseObj = new Course((courses.Count + 1), title, duration, price);
+            var courseObj = new Course(courseId, title, duration, price);
             courses.Add(courseObj);
 
         }
@@ -31,10 +31,10 @@ namespace CourseManagementSystem_v1
             }
             else
             {
-                Console.WriteLine("Course Not Available...");
+                Console.WriteLine("No Courses available.");
             }
         }
-        public void UpdateCourse(int id, string title, string duration, decimal price)
+        public void UpdateCourse(string id, string title, string duration, decimal price)
         {
             var course = courses.Find(c => c.CourseId == id);
             if (course != null)
@@ -42,7 +42,7 @@ namespace CourseManagementSystem_v1
                 course.Title = title;
                 course.Duration = duration;
                 course.Price = price;
-                Console.WriteLine("\nCourse Update Successfully...");
+                Console.WriteLine("\nCourse Update Successfully.");
             }
             else
             {
@@ -50,7 +50,7 @@ namespace CourseManagementSystem_v1
             }
         }
 
-        public void DeleteCourse(int id)
+        public void DeleteCourse(string id)
         {
             var course = courses.Find(c => c.CourseId == id);
             if (course != null)

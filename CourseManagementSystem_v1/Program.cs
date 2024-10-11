@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,9 @@ namespace CourseManagementSystem_v1
 
                         Console.Clear();
 
+                        Console.Write("Enter Course ID: ");
+                        string courseId = Console.ReadLine();
+
                         Console.Write("Enter Course Title: ");
                         string title = Console.ReadLine();
 
@@ -40,7 +44,9 @@ namespace CourseManagementSystem_v1
                         Console.Write("Enter Course Price: ");
                         decimal price = decimal.Parse(Console.ReadLine());
 
-                        courseManager.CreateCourse(title, duration, price);
+                        courseManager.CreateCourse(courseId, title, duration, price);
+                        Console.WriteLine("Course added successfully.");
+                       
 
                         break;
 
@@ -56,19 +62,20 @@ namespace CourseManagementSystem_v1
 
                         Console.Clear();
 
-                        Console.Write("Enter course ID to update: ");
-                        int courseid = int.Parse(Console.ReadLine());
+                        Console.Write("Enter the Course ID to update: ");
+                        string courseid = Console.ReadLine();
 
-                        Console.Write("Enter Course Title: ");
+                        Console.Write("Enter new Title:  ");
                         string newTitle = Console.ReadLine();
 
-                        Console.Write("Enter Course Duration: ");
+                        Console.Write("Enter new Duration:  ");
                         string newDuration = Console.ReadLine();
 
+                        Console.Write("Enter new Price:  ");
                         decimal newPrice = decimal.Parse(Console.ReadLine());
 
                         courseManager.UpdateCourse(courseid, newTitle, newDuration, newPrice);
-
+                   
                         break;
 
                     case "4":
@@ -76,7 +83,7 @@ namespace CourseManagementSystem_v1
                         Console.Clear();
 
                         Console.Write("Enter CourseId to Delete: ");
-                        int CourseId = int.Parse(Console.ReadLine());
+                        string CourseId = Console.ReadLine();
 
                         courseManager.DeleteCourse(CourseId);
 
@@ -92,8 +99,11 @@ namespace CourseManagementSystem_v1
                         break;
                 };
 
+                if (exit == false)
+                {
                 Console.WriteLine("\nPress any key to continue...");
                 Console.ReadKey();
+                }
 
             }
         }
